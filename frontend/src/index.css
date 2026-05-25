@@ -1,0 +1,97 @@
+/* ── AGROTECH DESIGN TOKENS ── */
+:root {
+  --sidebar-bg: #0a1628;
+  --sidebar-w: 220px;
+  --sidebar-w-collapsed: 56px;
+
+  --green-900: #14532d;
+  --green-700: #15803d;
+  --green-600: #16a34a;
+  --green-500: #22c55e;
+  --green-100: #dcfce7;
+  --green-50:  #f0fdf4;
+
+  --gold-700:  #a16207;
+  --gold-500:  #eab308;
+  --gold-100:  #fef9c3;
+
+  --red-700:   #b91c1c;
+  --red-500:   #ef4444;
+  --red-100:   #fee2e2;
+
+  --orange-600:#ea580c;
+  --orange-100:#fff7ed;
+
+  --blue-700:  #1d4ed8;
+  --blue-500:  #3b82f6;
+  --blue-100:  #dbeafe;
+
+  --purple-700:#7e22ce;
+  --purple-100:#f3e8ff;
+
+  --bg:        #f4f6f4;
+  --card:      #ffffff;
+  --border:    #e2e8e2;
+  --text:      #111827;
+  --muted:     #6b7280;
+  --radius:    12px;
+  --radius-sm: 8px;
+
+  --font-display: 'Syne', sans-serif;
+  --font-body:    'DM Sans', sans-serif;
+
+  --shadow-sm: 0 1px 3px rgba(0,0,0,.06);
+  --shadow-md: 0 4px 16px rgba(0,0,0,.09);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* scrollbar */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #d1d5d1; border-radius: 4px; }
+
+/* animaciones */
+@keyframes pulse  { 0%,100%{opacity:1} 50%{opacity:.3} }
+@keyframes bounce { 0%,80%,100%{transform:scale(.55);opacity:.5} 40%{transform:scale(1);opacity:1} }
+@keyframes spin   { to { transform: rotate(360deg); } }
+@keyframes fadeIn { from{opacity:0;transform:translateY(6px)} to{opacity:1;transform:translateY(0)} }
+@keyframes slideUp{ from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
+@keyframes agentTyping {
+  0%   { width: 0 }
+  50%  { width: 100% }
+  100% { width: 100%; opacity: 0 }
+}
+
+.fade-in  { animation: fadeIn  .25s ease forwards; }
+.slide-up { animation: slideUp .3s  ease forwards; }
+
+/* agent log stream */
+.agent-log-line {
+  animation: fadeIn .2s ease forwards;
+  border-left: 2px solid var(--green-500);
+  padding-left: 10px;
+  margin-bottom: 6px;
+  font-size: 12px;
+  color: #9ca3af;
+  font-family: 'Courier New', monospace;
+}
+.agent-log-line.active {
+  color: var(--green-500);
+  border-left-color: var(--green-500);
+}
+.agent-log-line.done {
+  color: #6b7280;
+  border-left-color: #374151;
+}
+.agent-log-line.error {
+  color: var(--red-500);
+  border-left-color: var(--red-500);
+}
