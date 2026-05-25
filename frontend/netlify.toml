@@ -1,37 +1,37 @@
 [build]
-command = "npm run build"
-publish = "dist"
+  base = "frontend"
+  publish = "dist"
+  command = "npm run build"
 
 [functions]
-directory = "../netlify/functions"
-node_bundler = "esbuild"
+  directory = "../netlify/functions"
 
 [[redirects]]
-from = "/registros/*"
-to = "/.netlify/functions/registros/:splat"
-status = 200
+  from = "/registros/*"
+  to = "/.netlify/functions/registros/:splat"
+  status = 200
 
 [[redirects]]
-from = "/registros"
-to = "/.netlify/functions/registros"
-status = 200
+  from = "/registros"
+  to = "/.netlify/functions/registros"
+  status = 200
 
 [[redirects]]
-from = "/campos/*"
-to = "/.netlify/functions/campos/:splat"
-status = 200
+  from = "/campos/*"
+  to = "/.netlify/functions/campos/:splat"
+  status = 200
 
 [[redirects]]
-from = "/campos"
-to = "/.netlify/functions/campos"
-status = 200
+  from = "/campos"
+  to = "/.netlify/functions/campos"
+  status = 200
 
 [[redirects]]
-from = "/claude"
-to = "/.netlify/functions/claude"
-status = 200
+  from = "/claude"
+  to = "/.netlify/functions/claude"
+  status = 200
 
 [[redirects]]
-from = "/*"
-to = "/index.html"
-status = 200
+  from = "/*"
+  to = "/index.html"
+  status = 200
